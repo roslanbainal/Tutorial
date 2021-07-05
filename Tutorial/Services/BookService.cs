@@ -151,9 +151,7 @@ namespace Tutorial.Services
                 }
                 _context.Book.Add(book);
                 await _context.SaveChangesAsync();
-            }
-
-         
+            }        
         }
 
         public async Task DeleteBook(int id) {
