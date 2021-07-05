@@ -1,0 +1,88 @@
+﻿@model CreateUpdateBookViewModel
+@{
+    ViewData["Title"] = "CreateBook";
+}
+@if (Model.BookId > 0)
+{
+    <div class="page-content page-container" id="page-content">
+        <div class="padding">
+            <div class="row container d-flex justify-content-center">
+                <div class="col-xl-12 col-md-12">
+                    <div class="card user-card-full">
+                        <div class="row justify-content-center mb-4">
+                            <div class="col-12 col-md-8 col-lg-8 col-xl-6">
+                                <form asp-controller="Home" asp-action="CreateBook">
+                                    <input hidden asp-for="BookId" />
+                                    <div class="row align-items-center">
+                                        <div class="col mt-4">
+                                            <input asp-for="BookName" type="text" class="form-control" placeholder="Book Name">
+                                        </div>
+                                    </div>
+                                    <div class="row align-items-center mt-4">
+                                        <div class="col">
+                                            <select asp-for="AuthorId" class="form-control" asp-items="@Model.Authors">
+                                                <option>Select Author</option>
+                                            </select>
+                                        </div>
+                                        <div class="col">
+                                            <select asp-for="CategoryIds" class="form-control multipleChosen" multiple="multiple" asp-items="@Model.Categories">
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="row justify-content-start mt-4">
+                                        <div class="col">
+                                            <button class="btn btn-primary mt-4 mb-3" type="submit">Update</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+}
+else
+{
+    <div class="page-content page-container" id="page-content">
+        <div class="padding">
+            <div class="row container d-flex justify-content-center">
+                <div class="col-xl-12 col-md-12">
+                    <div class="card user-card-full">
+                        <div class="row justify-content-center mb-4">
+                            <div class="col-12 col-md-8 col-lg-8 col-xl-6">
+                                <form asp-controller="Home" asp-action="CreateBook">
+                                    <div class="row align-items-center">
+                                        <div class="col mt-4">
+                                            <input asp-for="BookName" type="text" class="form-control" placeholder="Book Name">
+                                        </div>
+                                    </div>
+                                    <div class="row align-items-center mt-4">
+                                        <div class="col">
+                                            <select asp-for="AuthorId" class="form-control" asp-items="@Model.Authors">
+                                                <option>Select Author</option>
+                                            </select>
+                                        </div>
+                                        <div class="col">
+                                            <select asp-for="CategoryIds" class="form-control multipleChosen" multiple="multiple" asp-items="@Model.Categories">
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="row justify-content-start mt-4">
+                                        <div class="col">
+                                            <button class="btn btn-primary mt-4 mb-3" type="submit">Submit</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+}
+
