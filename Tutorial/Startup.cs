@@ -11,6 +11,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Tutorial.Data;
+using Tutorial.Helpers;
 using Tutorial.Services;
 
 namespace Tutorial
@@ -28,12 +29,14 @@ namespace Tutorial
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddScoped<BookService>();
+            services.AddScoped<AuthorService>();
             services.AddControllersWithViews();
             services.AddDbContext<DataContext>(option =>
             {
                 option.UseSqlite(Configuration.GetConnectionString("DefaultConnection"))
                 .LogTo(Console.WriteLine, LogLevel.Information);
             });
+            services.AddAutoMapper(typeof(AutoMapperProfiles).Assembly);
             services.AddMvc();
         }
 

@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using Tutorial.Data;
 using Tutorial.Entities;
 using Tutorial.ViewModel;
+using Tutorial.ViewModel.Book;
 
 namespace Tutorial.Services
 {
