@@ -1,0 +1,26 @@
+﻿@model IEnumerable<AuthorViewModel>
+@{
+    ViewData["Title"] = "ListAuthor";
+}
+
+<div class="row">
+   @foreach (var item in Model) {
+       var img = item.PhotoUrl;
+    <div class="col-lg-4">
+        <div class="card" style="width: 18rem;">
+            <img src="@img" class="card-img-top" alt="Author Image">
+            <div class="card-body">
+                <h5 class="card-title">@item.AuthorName</h5>
+                <p class="card-text"><i class="fas fa-calendar-alt mr-2"></i>@item.Email</p>
+                <p class="card-text"><i class="fas fa-map-marker mr-2"></i>@item.Address</p>
+                <p class="card-text"><i class="fas fa-calendar-alt mr-2"></i>@item.Since.Year</p>
+                <a asp-controller="Author" asp-action="AuthorBooks" asp-route-id="@item.Id" class="btn btn-primary">
+                View Book
+                <span class="badge bg-secondary ml-1">@item.TotalBook</span></a>
+            </div>
+        </div>
+    </div>
+     }
+</div>
+
+
