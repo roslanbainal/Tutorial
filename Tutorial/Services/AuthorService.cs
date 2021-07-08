@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Tutorial.Data;
+using Tutorial.Entities;
 using Tutorial.ViewModel;
 using Tutorial.ViewModel.Author;
 
@@ -40,6 +41,35 @@ namespace Tutorial.Services
             return await _context.Book.Where(x => x.AuthorId == id)
                 .ProjectTo<BookViewModel>(_mapper.ConfigurationProvider)
                 .ToListAsync();
+        }
+
+        public async Task<CreateUpdateViewModel> CreateUpdateAuthor(int? id) {
+            if (id > 0)
+            {
+                var author = await _context.Author.Where(x => x.Id == id)
+                    .ProjectTo<CreateUpdateViewModel>(_mapper.ConfigurationProvider)
+                    .FirstOrDefaultAsync();
+
+                return author;
+            }
+            else {
+                return new CreateUpdateViewModel();
+            }
+        }
+
+        public async Task Save(CreateUpdateViewModel model) {
+
+            if (model.Id > 0)
+            {
+                var author = await _context.Author.FindAsync(model.Id);
+                _mapper.Map(model,author);
+                await _context.SaveChangesAsync();
+            }
+            else {
+                Author author = _mapper.Map<CreateUpdateViewModel, Author>(model);
+                _context.Author.Add(author);
+                await _context.SaveChangesAsync();
+            }
         }
     }
 }

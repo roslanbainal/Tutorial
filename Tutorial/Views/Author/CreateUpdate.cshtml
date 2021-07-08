@@ -1,0 +1,134 @@
+﻿@model CreateUpdateViewModel
+@{
+    ViewData["Title"] = "CreateUpdate";
+    var photo = Model.PhotoUrl;
+    var today = DateTime.Now;
+    var date = String.Format("dd-MM-yyyy", today);
+}
+
+@if (Model.Id > 0)
+{
+    <div class="page-content page-container" id="page-content">
+        <div class="padding">
+            <div class="row container d-flex justify-content-center">
+                <div class="col-xl-12 col-md-12">
+                    <div class="card user-card-full">
+                        <div class="row justify-content-center mb-4">
+                            <div class="col-12 col-md-8 col-lg-8 col-xl-6">
+                                <form asp-controller="Author" asp-action="CreateUpdate">
+                                    <input hidden asp-for="Id" />
+                                    <div class="row align-items-center">
+                                        <div class="col mt-4">
+                                            <input asp-for="AuthorName" type="text" class="form-control" placeholder="Auhtor Name">
+                                            <span class="text-danger" asp-validation-for="AuthorName"></span>
+                                        </div>
+                                    </div>
+                                    <div class="row align-items-center">
+                                        <div class="col mt-4">
+                                            <input asp-for="Email" type="email" class="form-control" placeholder="Email">
+                                            <span class="text-danger" asp-validation-for="Email"></span>
+                                        </div>
+                                    </div>
+                                    <div class="row align-items-center">
+                                        <div class="col mt-4">
+                                            <input asp-for="Academic" type="text" class="form-control" placeholder="Academic">
+                                            <span class="text-danger" asp-validation-for="Academic"></span>
+                                        </div>
+                                    </div>
+                                    <div class="row align-items-center">
+                                        <div class="col mt-4">
+                                            <input asp-for="Address" type="text" class="form-control" placeholder="Address">
+                                            <span class="text-danger" asp-validation-for="Address"></span>
+                                        </div>
+                                    </div>
+                                    <div class="row align-items-center">
+                                        <div class="col mt-4">
+                                            <input asp-for="Since" class="form-control" placeholder="Since" id="datePicker" type="date">
+                                            <span class="text-danger" asp-validation-for="Since"></span>
+                                        </div>
+                                    </div>
+                                    <div class="row align-items-center">
+                                        <div class="col mt-4">
+                                            <input asp-for="PhotoUrl" type="text" class="form-control PhotoUrl" placeholder="PhotoUrl">
+                                            <span class="text-danger" asp-validation-for="PhotoUrl"></span>
+                                        </div>
+                                    </div>
+                                    <img src="@photo" width="50" height="50" class="mt-2" id="imageAuthor" />
+                                    <div class="row justify-content-start mt-4">
+                                        <div class="col">
+                                            <button class="btn btn-primary mt-4 mb-3" type="submit">Update</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+}
+else
+{
+    <div class="page-content page-container" id="page-content">
+        <div class="padding">
+            <div class="row container d-flex justify-content-center">
+                <div class="col-xl-12 col-md-12">
+                    <div class="card user-card-full">
+                        <div class="row justify-content-center mb-4">
+                            <div class="col-12 col-md-8 col-lg-8 col-xl-6">
+                                <form asp-controller="Author" asp-action="CreateUpdate">
+                                    <div class="row align-items-center">
+                                        <div class="col mt-4">
+                                            <input asp-for="AuthorName" type="text" class="form-control" placeholder="Auhtor Name">
+                                            <span class="text-danger" asp-validation-for="AuthorName"></span>
+                                        </div>
+                                    </div>
+                                    <div class="row align-items-center">
+                                        <div class="col mt-4">
+                                            <input asp-for="Email" type="email" class="form-control" placeholder="Email">
+                                            <span class="text-danger" asp-validation-for="Email"></span>
+                                        </div>
+                                    </div>
+                                    <div class="row align-items-center">
+                                        <div class="col mt-4">
+                                            <input asp-for="Academic" type="text" class="form-control" placeholder="Academic">
+                                            <span class="text-danger" asp-validation-for="Academic"></span>
+                                        </div>
+                                    </div>
+                                    <div class="row align-items-center">
+                                        <div class="col mt-4">
+                                            <input asp-for="Address" type="text" class="form-control" placeholder="Address">
+                                            <span class="text-danger" asp-validation-for="Address"></span>
+                                        </div>
+                                    </div>
+                                    <div class="row align-items-center">
+                                        <div class="col mt-4">
+                                            <input asp-for="Since" type="date" class="form-control" placeholder="Since" id="datePicker">
+                                            <span class="text-danger" asp-validation-for="Since"></span>
+                                        </div>
+                                    </div>
+                                    <div class="row align-items-center">
+                                        <div class="col mt-4">
+                                            <input asp-for="PhotoUrl" type="text" class="form-control PhotoUrl" placeholder="PhotoUrl">
+                                            <span class="text-danger" asp-validation-for="PhotoUrl"></span>
+                                        </div>
+                                    </div>
+                                    <img src="@photo" width="50" height="50" class="mt-2" id="imageAuthor" />
+                                    <div class="row justify-content-start mt-4">
+                                        <div class="col">
+                                            <button class="btn btn-primary mt-4 mb-3" type="submit">Update</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+

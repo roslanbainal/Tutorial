@@ -21,6 +21,15 @@ namespace Tutorial.Data
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<BookCategory>().HasKey(sc => new { sc.BookId, sc.CategoryId });
+
+           // modelBuilder.Entity<Author>()
+           //.HasOne(a => a.AuthorInfo)
+           //.WithMany();
+
+            // modelBuilder.Entity<AuthorInfo>()
+            //.HasOne(a => a.Author)
+            //.WithOne(b => b.AuthorInfo)
+            //.HasForeignKey<Author>(b => b.Id);
         }
 
     }
