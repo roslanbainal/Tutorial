@@ -8,4 +8,13 @@ $(document).ready(function () {
     $(".multipleChosen").chosen({
         placeholder_text_multiple: "Select Category" //placeholder
     });
+
+    $('#datePicker').datepicker({
+        dateFormat: 'dd-MM-yyyy',
+    }).val();
+
+    $(".PhotoUrl").change(function () {
+        $("#imageAuthor").attr("src", $(this).val());
+    })
+   
 });

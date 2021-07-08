@@ -2,7 +2,11 @@
 @{
     ViewData["Title"] = "ListAuthor";
 }
-
+<div class="row mb-2">
+    <a asp-controller="Author" asp-action="CreateUpdate" class="btn btn-success mb-2">
+        Add Author
+    </a>
+</div>
 <div class="row">
    @foreach (var item in Model) {
        var img = item.PhotoUrl;
@@ -15,8 +19,12 @@
                 <p class="card-text"><i class="fas fa-map-marker mr-2"></i>@item.Address</p>
                 <p class="card-text"><i class="fas fa-calendar-alt mr-2"></i>@item.Since.Year</p>
                 <a asp-controller="Author" asp-action="AuthorBooks" asp-route-id="@item.Id" class="btn btn-primary">
-                View Book
-                <span class="badge bg-secondary ml-1">@item.TotalBook</span></a>
+                    View Book
+                    <span class="badge bg-secondary ml-1">@item.TotalBook</span>
+                </a>
+                <a asp-controller="Author" asp-action="CreateUpdate" asp-route-id="@item.Id" class="btn btn-primary">
+                    Edit Author
+                </a>
             </div>
         </div>
     </div>
