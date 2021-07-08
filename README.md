@@ -3,7 +3,7 @@
 ## FEATURES
 1. ASP.NET CORE MVC /EF Core / .NET 5
 2. Code First Approach
-3. ViewModel for mapping
+3. ViewModel for mapping and validation
 4. SqlLite
 5. CRUD Operations
 6. Services as business logic
