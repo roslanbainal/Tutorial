@@ -17,6 +17,6 @@
 1. https://www.c-sharpcorner.com/article/multi-select-checkbox-dropdown-list-create-edit-in-net-core-3-1/
 2. https://eamonkeane.dev/3-ways-to-view-sql-generated-by-entity-framework-core-5/
 3. https://stackoverflow.com/questions/34624034/select-tag-helper-in-asp-net-core-mvc
-4. https://www.entityframeworktutorial.net/efcore/
+4. https://www.entityframeworktutorial.net/efcore/entity-framework-core.aspx
 5. https://code-maze.com/efcore-relationships/
 
