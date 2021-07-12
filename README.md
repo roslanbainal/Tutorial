@@ -18,4 +18,5 @@
 2. https://eamonkeane.dev/3-ways-to-view-sql-generated-by-entity-framework-core-5/
 3. https://stackoverflow.com/questions/34624034/select-tag-helper-in-asp-net-core-mvc
 4. https://www.entityframeworktutorial.net/efcore/
+5. https://code-maze.com/efcore-relationships/
 
